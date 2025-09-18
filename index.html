@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Md Tasnim Alam - AI Researcher & PhD Student</title>
     <style>
+        :root {
+            --primary-blue: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-blue: #3b82f6;
+            --accent-teal: #0891b2;
+            --accent-purple: #7c3aed;
+            --success-green: #059669;
+            --warning-amber: #d97706;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --background-primary: #ffffff;
+            --background-secondary: #f8fafc;
+            --background-tertiary: #f1f5f9;
+            --border-light: #e2e8f0;
+            --border-medium: #cbd5e1;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            --gradient-secondary: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            --gradient-accent: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+            --gradient-bg: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,8 +40,8 @@
         body {
             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #1e293b;
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: var(--text-primary);
+            background: var(--gradient-bg);
             min-height: 100vh;
         }
 
@@ -25,15 +51,13 @@
             padding: 20px;
         }
 
-        /* Enhanced Header */
         header {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            border-radius: 20px;
+            background: var(--background-primary);
+            border-radius: 24px;
             padding: 50px;
             text-align: center;
             margin-bottom: 40px;
-            box-shadow: 0 20px 40px rgba(30, 41, 59, 0.1), 0 8px 16px rgba(30, 41, 59, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: var(--shadow-xl), 0 0 0 1px var(--border-light);
             animation: fadeInUp 0.8s ease-out;
             position: relative;
             overflow: hidden;
@@ -45,16 +69,16 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
-            border-radius: 20px 20px 0 0;
+            height: 5px;
+            background: var(--gradient-primary);
+            border-radius: 24px 24px 0 0;
         }
 
         .profile-img {
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            background: var(--gradient-primary);
             margin: 0 auto 25px;
             display: flex;
             align-items: center;
@@ -63,7 +87,7 @@
             font-size: 3.5rem;
             font-weight: 700;
             transition: all 0.4s ease;
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+            box-shadow: var(--shadow-lg), 0 0 30px rgba(37, 99, 235, 0.2);
             position: relative;
             overflow: hidden;
         }
@@ -88,7 +112,7 @@
         h1 {
             font-size: 3.2em;
             margin-bottom: 15px;
-            background: linear-gradient(135deg, #1e40af, #3b82f6, #8b5cf6);
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -98,7 +122,7 @@
 
         .tagline {
             font-size: 1.4em;
-            color: #475569;
+            color: var(--text-secondary);
             margin-bottom: 20px;
             font-weight: 600;
         }
@@ -107,14 +131,14 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            background: var(--gradient-accent);
             color: white;
             padding: 12px 24px;
             border-radius: 50px;
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 30px;
-            box-shadow: 0 10px 20px rgba(6, 182, 212, 0.3);
+            box-shadow: var(--shadow-md), 0 0 20px rgba(8, 145, 178, 0.2);
             animation: pulse 2s infinite;
         }
 
@@ -130,20 +154,20 @@
             align-items: center;
             gap: 10px;
             padding: 14px 28px;
-            background: linear-gradient(135deg, #475569, #334155);
+            background: var(--text-secondary);
             color: white;
             text-decoration: none;
             border-radius: 12px;
             transition: all 0.3s ease;
             font-weight: 600;
             font-size: 1rem;
-            box-shadow: 0 4px 12px rgba(71, 85, 105, 0.3);
+            box-shadow: var(--shadow-md);
         }
 
         .social-link:hover {
-            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            background: var(--gradient-primary);
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.4);
+            box-shadow: var(--shadow-lg), 0 0 20px rgba(37, 99, 235, 0.3);
         }
 
         /* Enhanced Content Grid */
@@ -155,11 +179,10 @@
         }
 
         .card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            border-radius: 20px;
+            background: var(--background-primary);
+            border-radius: 24px;
             padding: 35px;
-            box-shadow: 0 20px 40px rgba(30, 41, 59, 0.08), 0 8px 16px rgba(30, 41, 59, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: var(--shadow-xl), 0 0 0 1px var(--border-light);
             transition: all 0.4s ease;
             animation: fadeInUp 0.8s ease-out;
             position: relative;
@@ -172,17 +195,17 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+            height: 4px;
+            background: var(--gradient-primary);
         }
 
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 30px 60px rgba(30, 41, 59, 0.15), 0 12px 24px rgba(30, 41, 59, 0.08);
+            box-shadow: var(--shadow-xl), 0 0 40px rgba(37, 99, 235, 0.1);
         }
 
         .card h2 {
-            color: #1e293b;
+            color: var(--text-primary);
             margin-bottom: 25px;
             font-size: 1.6em;
             font-weight: 700;
@@ -197,7 +220,7 @@
             left: 0;
             width: 60px;
             height: 3px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            background: var(--gradient-primary);
             border-radius: 2px;
         }
 
@@ -515,19 +538,19 @@
             <div class="profile-img">TA</div>
             <h1>Md Tasnim Alam</h1>
             <p class="tagline">AI Researcher | PhD Student | Computer Vision Specialist</p>
-            <div class="current-status">🎓 First Year PhD Student • 🔬 Graduate Research Assistant</div>
+            <div class="current-status">🎓 First Year PhD Student (Fall 2025) • 🔬 Graduate Research Assistant</div>
             <div class="social-links">
                 <a href="https://github.com/mdtasnimalam" class="social-link">
                     📱 GitHub
                 </a>
-                <a href="https://linkedin.com/in/mdtasnimalam" class="social-link">
+                <a href="https://www.linkedin.com/in/md-tasnim-alam-ab0a98141" class="social-link">
                     💼 LinkedIn
                 </a>
-                <a href="mailto:malam5@aggies.ncat.edu" class="social-link">
-                    ✉️ University Email
+                <a href="https://scholar.google.com/citations?user=DchTBgwAAAAJ&hl=en&authuser=1&oi=ao" class="social-link">
+                    🎓 Google Scholar
                 </a>
-                <a href="mailto:alamtasnim7@gmail.com" class="social-link">
-                    📧 Personal Email
+                <a href="mailto:malam5@aggies.ncat.edu" class="social-link">
+                    ✉️ Contact Me
                 </a>
             </div>
         </header>
@@ -535,11 +558,12 @@
         <div class="content-grid">
             <div class="card">
                 <h2>About Me</h2>
-                <p>Hello! I'm Md Tasnim Alam, a first-year PhD student and Graduate Research & Teaching Assistant at North Carolina A&T State University. I recently completed my MSc in Computer Science with a thesis focused on <strong>Human Action Recognition from Still Images</strong> using cutting-edge explainable AI techniques.</p>
+                <p>Hello! I'm Md Tasnim Alam, a first-year PhD student (Fall 2025) and Graduate Research & Teaching Assistant at North Carolina A&T State University. I recently completed my MSc in Computer Science with a thesis on <strong>"Image-Based HAR Using Pretrained Deep Neural Networks, Ensemble Learning, and Explainable AI for Visualizations"</strong> focusing on cutting-edge explainable AI techniques.</p>
                 
                 <div class="research-focus">
                     <h3>🔬 Current Research Focus</h3>
                     <p><strong>Gun Violence & Fight Detection:</strong> Developing advanced action recognition systems for real-time threat detection and public safety applications using state-of-the-art computer vision and deep learning techniques.</p>
+                    <p><strong>Deepfake Detection:</strong> Working on sophisticated deepfake detection algorithms to combat misinformation and enhance digital media authenticity verification.</p>
                 </div>
 
                 <div class="future-plans">
@@ -571,7 +595,9 @@
                             <span class="skill-tag expert">Grad-CAM</span>
                             <span class="skill-tag expert">Grad-CAM++</span>
                             <span class="skill-tag expert">Image Processing</span>
-                            <span class="skill-tag advanced">Action Recognition</span>
+                            <span class="skill-tag expert">Action Recognition</span>
+                            <span class="skill-tag expert">Deepfake Detection</span>
+                            <span class="skill-tag advanced">Explainable AI</span>
                         </div>
                     </div>
 
@@ -622,14 +648,20 @@
                 
                 <div class="project">
                     <h3>Gun Violence & Fight Detection System</h3>
-                    <div class="project-meta">PhD Research • 2024 - Present</div>
+                    <div class="project-meta">PhD Research • Fall 2025 - Present</div>
                     <p>Developing advanced computer vision models for real-time detection of violent activities and gun-related incidents. Implementing state-of-the-art action recognition algorithms with explainable AI components for security and surveillance applications.</p>
                 </div>
 
                 <div class="project">
-                    <h3>Human Action Recognition with Explainable AI</h3>
+                    <h3>Deepfake Detection & Media Authenticity</h3>
+                    <div class="project-meta">Research Project • 2024 - Present</div>
+                    <p>Developing sophisticated deepfake detection algorithms using advanced neural networks and computer vision techniques. Focus on combating misinformation and enhancing digital media authenticity verification through explainable AI methods.</p>
+                </div>
+
+                <div class="project">
+                    <h3>Image-Based Human Action Recognition with Explainable AI</h3>
                     <div class="project-meta">MSc Thesis • 2023 - 2024</div>
-                    <p>Completed MSc thesis focusing on human action recognition from still images using transfer learning. Implemented <strong>Grad-CAM and Grad-CAM++</strong> for model interpretability and visualization, enabling better understanding of model decision-making processes.</p>
+                    <p>Completed MSc thesis: <strong>"Image-Based HAR Using Pretrained Deep Neural Networks, Ensemble Learning, and Explainable AI for Visualizations"</strong>. Implemented Grad-CAM and Grad-CAM++ for model interpretability, enabling better understanding of model decision-making processes.</p>
                 </div>
 
                 <div class="publication-item">
@@ -656,14 +688,14 @@
                 
                 <div class="education-item">
                     <h3>🎓 PhD in Computer Science (First Year)</h3>
-                    <div class="education-meta">North Carolina A&T State University • 2024 - Present</div>
-                    <p>Specializing in Computer Vision, AI Safety, and Action Recognition. Graduate Research Assistant conducting cutting-edge research in violence detection systems and explainable AI.</p>
+                    <div class="education-meta">North Carolina A&T State University • Fall 2025 - Present</div>
+                    <p>Specializing in Computer Vision, AI Safety, and Action Recognition. Graduate Research Assistant conducting cutting-edge research in violence detection systems, deepfake detection, and explainable AI.</p>
                 </div>
 
                 <div class="education-item">
                     <h3>🎓 MSc in Computer Science (Completed)</h3>
                     <div class="education-meta">North Carolina A&T State University • 2023 - 2024</div>
-                    <p><strong>Thesis:</strong> Human Action Recognition from Still Images with Explainable AI (Grad-CAM/Grad-CAM++). Successfully defended with distinction.</p>
+                    <p><strong>Thesis:</strong> "Image-Based HAR Using Pretrained Deep Neural Networks, Ensemble Learning, and Explainable AI for Visualizations". Successfully defended with distinction.</p>
                 </div>
 
                 <div class="education-item">
@@ -674,7 +706,7 @@
 
                 <div class="project">
                     <h3>👨‍🏫 Graduate Teaching Assistant</h3>
-                    <div class="project-meta">NC A&T State University • 2023 - Present</div>
+                    <div class="project-meta">NC A&T State University • Fall 2025 - Present</div>
                     <p>Supporting undergraduate computer science courses, mentoring students in AI/ML concepts, and assisting with research supervision and academic guidance.</p>
                 </div>
 
