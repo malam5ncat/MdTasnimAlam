@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Tasnim Alam - AI Researcher & PhD Student</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Enhanced Header */
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(30, 41, 59, 0.1), 0 8px 16px rgba(30, 41, 59, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            animation: fadeInUp 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-img::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.4);
+        }
+
+        h1 {
+            font-size: 3.2em;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #1e40af, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            font-size: 1.4em;
+            color: #475569;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .current-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(6, 182, 212, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #475569, #334155);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(71, 85, 105, 0.3);
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.4);
+        }
+
+        /* Enhanced Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 20px 40px rgba(30, 41, 59, 0.08), 0 8px 16px rgba(30, 41, 59, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: all 0.4s ease;
+            animation: fadeInUp 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(30, 41, 59, 0.15), 0 12px 24px rgba(30, 41, 59, 0.08);
+        }
+
+        .card h2 {
+            color: #1e293b;
+            margin-bottom: 25px;
+            font-size: 1.6em;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .card h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+        }
+
+        /* Enhanced Skills Section */
+        .skill-section {
+            margin-bottom: 30px;
+        }
+
+        .skill-category {
+            margin-bottom: 25px;
+        }
+
+        .skill-category h3 {
+            color: #334155;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            color: #334155;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .skill-tag.expert {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .skill-tag.advanced {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .skill-tag.intermediate {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.08) translateY(-2px);
+        }
+
+        /* Enhanced Project Cards */
+        .project {
+            margin-bottom: 30px;
+            padding: 25px;
+            border-left: 5px solid #3b82f6;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-radius: 0 15px 15px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(30, 41, 59, 0.05);
+        }
+
+        .project:hover {
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            border-left-color: #8b5cf6;
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(30, 41, 59, 0.1);
+        }
+
+        .project h3 {
+            color: #1e293b;
+            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        .project-meta {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        /* Enhanced Education Items */
+        .education-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-radius: 15px;
+            border-left: 5px solid #10b981;
+            box-shadow: 0 4px 12px rgba(30, 41, 59, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(30, 41, 59, 0.1);
+        }
+
+        .education-item h3 {
+            color: #1e293b;
+            margin-bottom: 8px;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        .education-meta {
+            color: #64748b;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Enhanced Special Sections */
+        .research-focus {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border: 2px solid #10b981;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
+        }
+
+        .research-focus h3 {
+            color: #047857;
+            margin-bottom: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .publication-item {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 2px solid #f59e0b;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.15);
+        }
+
+        .publication-item h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .future-plans {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border: 2px solid #3b82f6;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+        }
+
+        .future-plans h3 {
+            color: #1e40af;
+            margin-bottom: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Enhanced Contact Form */
+        .contact-form {
+            display: grid;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 10px;
+        }
+
+        .form-group label {
+            font-weight: 700;
+            color: #334155;
+            font-size: 1.1em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            background: #ffffff;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn {
+            padding: 18px 36px;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
+            background: linear-gradient(135deg, #1e40af, #1e3a8a);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 40px 25px;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-link {
+                width: 250px;
+                justify-content: center;
+            }
+
+            .profile-img {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.2em;
+            }
+
+            .card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-img">TA</div>
+            <h1>Md Tasnim Alam</h1>
+            <p class="tagline">AI Researcher | PhD Student | Computer Vision Specialist</p>
+            <div class="current-status">🎓 First Year PhD Student • 🔬 Graduate Research Assistant</div>
+            <div class="social-links">
+                <a href="https://github.com/mdtasnimalam" class="social-link">
+                    📱 GitHub
+                </a>
+                <a href="https://linkedin.com/in/mdtasnimalam" class="social-link">
+                    💼 LinkedIn
+                </a>
+                <a href="mailto:malam5@aggies.ncat.edu" class="social-link">
+                    ✉️ University Email
+                </a>
+                <a href="mailto:alamtasnim7@gmail.com" class="social-link">
+                    📧 Personal Email
+                </a>
+            </div>
+        </header>
+
+        <div class="content-grid">
+            <div class="card">
+                <h2>About Me</h2>
+                <p>Hello! I'm Md Tasnim Alam, a first-year PhD student and Graduate Research & Teaching Assistant at North Carolina A&T State University. I recently completed my MSc in Computer Science with a thesis focused on <strong>Human Action Recognition from Still Images</strong> using cutting-edge explainable AI techniques.</p>
+                
+                <div class="research-focus">
+                    <h3>🔬 Current Research Focus</h3>
+                    <p><strong>Gun Violence & Fight Detection:</strong> Developing advanced action recognition systems for real-time threat detection and public safety applications using state-of-the-art computer vision and deep learning techniques.</p>
+                </div>
+
+                <div class="future-plans">
+                    <h3>🎯 Future Research Direction</h3>
+                    <p><strong>Medical Cyber-Physical Systems (CPS):</strong> Planning to apply AI and computer vision technologies to revolutionize healthcare monitoring, patient care systems, and medical decision-making processes.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Technical Skills</h2>
+                
+                <div class="skill-section">
+                    <div class="skill-category">
+                        <h3>🤖 AI/ML & Deep Learning</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag expert">TensorFlow</span>
+                            <span class="skill-tag expert">Keras</span>
+                            <span class="skill-tag expert">PyTorch</span>
+                            <span class="skill-tag expert">Scikit-learn</span>
+                            <span class="skill-tag expert">NumPy</span>
+                            <span class="skill-tag expert">Pandas</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>👁️ Computer Vision & XAI</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag expert">OpenCV</span>
+                            <span class="skill-tag expert">Grad-CAM</span>
+                            <span class="skill-tag expert">Grad-CAM++</span>
+                            <span class="skill-tag expert">Image Processing</span>
+                            <span class="skill-tag advanced">Action Recognition</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>💻 Programming Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag expert">Python</span>
+                            <span class="skill-tag advanced">C++</span>
+                            <span class="skill-tag advanced">C</span>
+                            <span class="skill-tag intermediate">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>🌐 Web Development</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag intermediate">React.js</span>
+                            <span class="skill-tag intermediate">Express.js</span>
+                            <span class="skill-tag intermediate">HTML5</span>
+                            <span class="skill-tag intermediate">CSS3</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>🗄️ Databases & Cloud</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag advanced">PostgreSQL</span>
+                            <span class="skill-tag advanced">MySQL</span>
+                            <span class="skill-tag intermediate">AWS</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>🛠️ Tools & Visualization</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag advanced">Matplotlib</span>
+                            <span class="skill-tag advanced">Seaborn</span>
+                            <span class="skill-tag intermediate">Adobe Photoshop</span>
+                            <span class="skill-tag intermediate">AutoCAD</span>
+                            <span class="skill-tag advanced">Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Research & Projects</h2>
+                
+                <div class="project">
+                    <h3>Gun Violence & Fight Detection System</h3>
+                    <div class="project-meta">PhD Research • 2024 - Present</div>
+                    <p>Developing advanced computer vision models for real-time detection of violent activities and gun-related incidents. Implementing state-of-the-art action recognition algorithms with explainable AI components for security and surveillance applications.</p>
+                </div>
+
+                <div class="project">
+                    <h3>Human Action Recognition with Explainable AI</h3>
+                    <div class="project-meta">MSc Thesis • 2023 - 2024</div>
+                    <p>Completed MSc thesis focusing on human action recognition from still images using transfer learning. Implemented <strong>Grad-CAM and Grad-CAM++</strong> for model interpretability and visualization, enabling better understanding of model decision-making processes.</p>
+                </div>
+
+                <div class="publication-item">
+                    <h4>📄 Published Research</h4>
+                    <p><strong>"Image-Based Human Action Recognition with Transfer Learning using Grad-CAM for Visualization"</strong></p>
+                    <p><em>20th International Conference on Artificial Intelligence Applications and Innovations (AIAI 2024), Corfu, Greece</em></p>
+                </div>
+
+                <div class="project">
+                    <h3>Tax & Accounting Software Platform</h3>
+                    <div class="project-meta">Industry Project • 2022 - Present</div>
+                    <p>Architecting comprehensive tax and accounting software with microservices architecture, modern JavaScript frontend, and PostgreSQL backend for international clients.</p>
+                </div>
+
+                <div class="project">
+                    <h3>WSN-based Coal Mine Safety Monitoring</h3>
+                    <div class="project-meta">Undergraduate Project • 2017 - 2018</div>
+                    <p>Designed an integrated IoT system with monitoring, communication, and control subsystems using wireless sensors for coal mine safety under Prof. Pabitra Mohan Khilar's guidance.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Education & Experience</h2>
+                
+                <div class="education-item">
+                    <h3>🎓 PhD in Computer Science (First Year)</h3>
+                    <div class="education-meta">North Carolina A&T State University • 2024 - Present</div>
+                    <p>Specializing in Computer Vision, AI Safety, and Action Recognition. Graduate Research Assistant conducting cutting-edge research in violence detection systems and explainable AI.</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>🎓 MSc in Computer Science (Completed)</h3>
+                    <div class="education-meta">North Carolina A&T State University • 2023 - 2024</div>
+                    <p><strong>Thesis:</strong> Human Action Recognition from Still Images with Explainable AI (Grad-CAM/Grad-CAM++). Successfully defended with distinction.</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>🎓 Bachelor of Technology</h3>
+                    <div class="education-meta">National Institute of Technology, Rourkela • 2018</div>
+                    <p>Computer Science & Engineering, First Class. ICCR Scholarship recipient for academic excellence.</p>
+                </div>
+
+                <div class="project">
+                    <h3>👨‍🏫 Graduate Teaching Assistant</h3>
+                    <div class="project-meta">NC A&T State University • 2023 - Present</div>
+                    <p>Supporting undergraduate computer science courses, mentoring students in AI/ML concepts, and assisting with research supervision and academic guidance.</p>
+                </div>
+
+                <div class="project">
+                    <h3>👨‍🏫 Lecturer & Software Engineer</h3>
+                    <div class="project-meta">North Bengal International University & Mode2IT • 2019 - 2023</div>
+                    <p>Taught AI, Software Engineering, and OOP courses while simultaneously developing cloud-native solutions for international clients. Supervised multiple undergraduate thesis projects.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Get In Touch</h2>
+                <p>I'm always interested in collaborative research opportunities, academic discussions, and potential partnerships in AI safety and medical CPS applications. Feel free to reach out for research collaborations, academic inquiries, or professional networking!</p>
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Research collaboration, academic inquiry, etc.">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value || 'Message via Portfolio Website';
+            const message = document.getElementById('message').value;
+            
+            const emailSubject = encodeURIComponent(`${subject} - from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            const mailtoLink = `mailto:malam5@aggies.ncat.edu?subject=${emailSubject}&body=${body}`;
+            
+            window.location.href = mailtoLink;
+            document.querySelector('.contact-form').reset();
+            alert('Thank you for your message! Your email client should open now.');
+        }
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Staggered animation delays for cards
+        const cards = document.querySelectorAll('.card');
+        cards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.15}s`;
+        });
+
+        // Enhanced hover effects for skill tags
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.08) translateY(-2px)';
+            });
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) translateY(0)';
+            });
+        });
+
+        // Add scroll effects
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            // Parallax effect for header
+            const header = document.querySelector('header');
+            if (header) {
+                header.style.transform = `translateY(${rate}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
